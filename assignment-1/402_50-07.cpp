@@ -1,6 +1,3 @@
-//*1.Write a C++ program to find out first n
-//perfect number where n is the input from user*/
-
 #include <iostream>
 #include <cctype>
 using namespace std;
