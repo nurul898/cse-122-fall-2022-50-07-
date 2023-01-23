@@ -1,37 +1,24 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 int main() {
-int num1, num2, i, num, digit, sum, count;
-cout << "Enter first number: ";
-cin >> num1;
-cout << "Enter second number: ";
-cin >> num2;
-if (num1 > num2) {
-num1 = num1 + num2;
-num2 = num1 - num2;
-num1 = num1 - num2;
+int n, t1 = 0, t2 = 1, nextTerm = 0;
+cout << "Enter the number of terms: ";
+cin >> n;
+cout << "Fibonacci Series: ";
+for (int i = 1; i <= n; ++i) {
+// Prints the first two terms.
+if(i == 1) {
+cout << t1 << ", ";
+continue;
 }
-cout << "Armstrong numbers between " << num1 << " and " << num2
-<< " are: " << endl;
-for(i = num1; i <= num2; i++) {
-count = 0;
-num = i;
-while(num > 0) {
-++count;
-num /= 10;
+if(i == 2) {
+cout << t2 << ", ";
+continue;
 }
-sum = 0;
-num = i;
-while(num > 0) {
-digit = num % 10;
-sum = sum + pow(digit, count);
-num /= 10;
-}
-
-if(sum == i) {
-cout << i << ", ";
-}
+nextTerm = t1 + t2;
+t1 = t2;
+t2 = nextTerm;
+cout << nextTerm << ", ";
 }
 return 0;
 }
